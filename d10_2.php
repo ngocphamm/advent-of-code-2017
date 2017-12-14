@@ -1,26 +1,20 @@
 <?php
 
-function array_cut($input, $offset, $length)
+function array_swap(&$array, $offset, $length)
 {
-    $slice = array_slice($input, $offset, $length);
+    $arr_length = count($array);
 
-    if ($offset + $length > count($input)) {
-        $slice = array_merge($slice, array_slice($input, 0, $length - count($slice)));
+    for ($i = 0; $i < intval($length / 2); $i++) {
+        $index = $offset + $i;
+        $index_to = $offset + $length - 1 - $i;
+
+        if ($index > ($arr_length - 1)) $index = $index % $arr_length;
+        if ($index_to > ($arr_length - 1)) $index_to = $index_to % $arr_length;
+
+        $tmp = $array[$index_to];
+        $array[$index_to] = $array[$index];
+        $array[$index] = $tmp;
     }
-
-    return $slice;
-}
-
-function array_swap($input, $offset, $length, $swap_array)
-{
-    for ($i = 0; $i < $length; $i++) {
-        $index = $i + $offset;
-        if ($index > (count($input) - 1)) $index = $index % count($input);
-
-        $input[$index] = $swap_array[$i];
-    }
-
-    return $input;
 }
 
 function str_to_ascii_sequence($input)
@@ -42,12 +36,7 @@ $index = $skip = 0;
 
 for ($i = 0; $i < 64; $i++) {
     foreach ($lengths as $length) {
-        $list = array_swap(
-            $list,
-            $index,
-            $length,
-            array_reverse(array_cut($list, $index, $length))
-        );
+        array_swap($list, $index, $length);
 
         $index += $length + $skip;
         if ($index > (count($list) - 1)) $index = $index % count($list);
