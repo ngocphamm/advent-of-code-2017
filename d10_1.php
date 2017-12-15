@@ -5,11 +5,9 @@ function array_swap(&$array, $offset, $length)
     $arr_length = count($array);
 
     for ($i = 0; $i < intval($length / 2); $i++) {
-        $index = $offset + $i;
-        $index_to = $offset + $length - 1 - $i;
-
-        if ($index > ($arr_length - 1)) $index = $index % $arr_length;
-        if ($index_to > ($arr_length - 1)) $index_to = $index_to % $arr_length;
+        // Wrap around list
+        $index = ($offset + $i) % $arr_length;
+        $index_to = ($offset + $length - 1 - $i) % $arr_length;
 
         $tmp = $array[$index_to];
         $array[$index_to] = $array[$index];
@@ -25,8 +23,8 @@ $index = $skip = 0;
 foreach ($lengths as $length) {
     array_swap($list, $index, $length);
 
-    $index += $length + $skip;
-    if ($index > (count($list) - 1)) $index = $index % count($list);
+    // Wrap around list
+    $index = ($index + $length + $skip) % count($list);
 
     $skip++;
 }
