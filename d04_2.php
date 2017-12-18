@@ -1,6 +1,6 @@
 <?php
 
-$fh = fopen('input_d04_1.txt','r');
+$fh = fopen('input_d04.txt','r');
 $valid_count = 0;
 
 while ($line = fgetcsv($fh, 1000, ' ')) {

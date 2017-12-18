@@ -1,6 +1,6 @@
 <?php
 
-$lines = file('input_d07_1.txt', FILE_IGNORE_NEW_LINES);
+$lines = file('input_d07.txt', FILE_IGNORE_NEW_LINES);
 
 $processes = [];
 $child_processes = [];

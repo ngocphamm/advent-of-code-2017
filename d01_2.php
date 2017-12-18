@@ -1,6 +1,6 @@
 <?php
 
-$input = trim(file_get_contents('input_d01_1.txt'));
+$input = trim(file_get_contents('input_d01.txt'));
 
 $arr = str_split($input);
 $half = count($arr) / 2;

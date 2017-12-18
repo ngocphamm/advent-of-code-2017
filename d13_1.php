@@ -4,7 +4,7 @@
 // $last_index = 0;
 // $severity = 0;
 
-// $lines = file('input_d13_1.txt', FILE_IGNORE_NEW_LINES);
+// $lines = file('input_d13.txt', FILE_IGNORE_NEW_LINES);
 
 // foreach ($lines as $line) {
 //     $parts = explode(':', $line);
@@ -50,7 +50,7 @@ $depth = [];
 $range = [];
 $severity = 0;
 
-$lines = file('input_d13_1.txt', FILE_IGNORE_NEW_LINES);
+$lines = file('input_d13.txt', FILE_IGNORE_NEW_LINES);
 
 foreach ($lines as $line) {
     $parts = explode(':', $line);

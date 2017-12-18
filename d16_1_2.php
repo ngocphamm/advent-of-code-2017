@@ -45,7 +45,7 @@ function make_moves(&$array, $moves)
 
 $arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'];
 
-$moves = explode(',', file_get_contents('input_d16_1.txt'));
+$moves = explode(',', file_get_contents('input_d16.txt'));
 
 make_moves($arr, $moves);
 echo implode('', $arr) . PHP_EOL;

@@ -1,6 +1,6 @@
 <?php
 
-$fh = fopen('input_d09_1.txt','r');
+$fh = fopen('input_d09.txt','r');
 
 // Vars
 $score = 0;
@@ -57,5 +57,5 @@ for ($i = 0; $i < strlen($no_garbage); $i++) {
     }
 }
 
-echo $score . PHP_EOL; 
+echo $score . PHP_EOL;
 echo $garbage_char_count . PHP_EOL;
