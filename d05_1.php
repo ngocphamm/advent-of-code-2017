@@ -2,7 +2,7 @@
 
 $arr = array_map(function($a) {
     return intval($a);
-}, file('input_d05_1.txt', FILE_IGNORE_NEW_LINES));
+}, file('input_d05.txt', FILE_IGNORE_NEW_LINES));
 
 $index = 0;
 $steps = 0;

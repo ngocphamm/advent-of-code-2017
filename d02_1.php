@@ -1,7 +1,7 @@
 <?php
 
 $sum = 0;
-$fh = fopen('input_d02_1.txt','r');
+$fh = fopen('input_d02.txt','r');
 
 while ($line = fgetcsv($fh, 1000, "\t")) {
     sort($line);

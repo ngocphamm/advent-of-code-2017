@@ -71,14 +71,14 @@ function exec_prog($ins, $prog_id, $send_to_prog_id, &$data)
 }
 
 // Instructions
-$ins = file('input_d18_1.txt', FILE_IGNORE_NEW_LINES);
+$ins = file('input_d18.txt', FILE_IGNORE_NEW_LINES);
 
 $data = [
-    'vals' => [0 => [], 1 => []],
-    'queue' => [0 => [], 1 => []],
+    'vals'       => [0 => [], 1 => []],
+    'queue'      => [0 => [], 1 => []],
     'sent_count' => [0 => 0, 1 => 0],
-    'cur' => [0 => 0, 1 => 0],
-    'runs' => 0
+    'cur'        => [0 => 0, 1 => 0],
+    'runs'       => 0
 ];
 
 while ($data['cur'][0] === 0 || count($data['queue'][0]) > 0 || count($data['queue'][1]) > 0) {

@@ -4,7 +4,7 @@ $vals = [];
 $sound = 0;
 
 // Instructions
-$ins = file('input_d18_1.txt', FILE_IGNORE_NEW_LINES);
+$ins = file('input_d18.txt', FILE_IGNORE_NEW_LINES);
 
 $i = 0;
 while (1) {

@@ -4,7 +4,7 @@ $mems = [];
 $max = 0;
 $highest = 0;
 
-$fh = fopen('input_d08_1.txt','r');
+$fh = fopen('input_d08.txt','r');
 
 while ($line = fgets($fh, 100)) {
     $parts = explode('if', $line);

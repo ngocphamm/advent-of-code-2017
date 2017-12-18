@@ -2,7 +2,7 @@
 
 // http://keekerdc.com/2011/03/hexagon-grids-coordinate-systems-and-distance-calculations/
 
-$moves = explode(',', file_get_contents('input_d11_1.txt'));
+$moves = explode(',', file_get_contents('input_d11.txt'));
 
 $x = $y = $z = 0;
 $max = 0;

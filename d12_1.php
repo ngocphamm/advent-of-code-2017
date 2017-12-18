@@ -14,7 +14,7 @@ function process_line($line, & $group0, & $to_process)
     }
 }
 
-$lines = file('input_d12_1.txt', FILE_IGNORE_NEW_LINES);
+$lines = file('input_d12.txt', FILE_IGNORE_NEW_LINES);
 
 $group0 = [];
 $to_process = [ 0 ];

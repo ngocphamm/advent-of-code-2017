@@ -14,7 +14,7 @@ function process_line($line, &$group_members, &$to_process)
     }
 }
 
-$lines = file('input_d12_1.txt', FILE_IGNORE_NEW_LINES);
+$lines = file('input_d12.txt', FILE_IGNORE_NEW_LINES);
 
 $group_count = 0;
 $processed_lines = [];
@@ -34,7 +34,7 @@ while (count($remaining_lines) > 0) {
     }
 
     $group_count++;
-    
+
     $t = array_values($processed_lines);
     $u = array_keys($lines);
     $remaining_lines = array_merge(array_diff($t, $u), array_diff($u, $t));
