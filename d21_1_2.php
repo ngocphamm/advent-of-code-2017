@@ -21,12 +21,13 @@ function expand_matrix(&$matrix, $rules)
     foreach ($subs as $sub) {
         $str = join_matrix($sub);
 
-        // flip once, rotate 3 times
+        // rotate 3 times. if still not match then flip
+        // by its nature, 2x2 matrix will NOT need to flip
         $rotate = 0;
         while (!array_key_exists($str, $rules)) {
             if ($rotate === 3) {
                 // Need to flip
-                $sub = flip_matrix($sub);
+                $sub = flip_matrix3($sub);
                 $rotate = 0;
             } else {
                 $sub = rotate_matrix($sub);
@@ -39,7 +40,7 @@ function expand_matrix(&$matrix, $rules)
         array_push($new_subs, $rules[$str]);
     }
 
-    // Join the new subs
+    // Join the new sub matrices
     $matrix = join_sub_matrices($new_subs);
 }
 
@@ -95,7 +96,10 @@ function rotate_matrix($matrix)
     return array_map('array_reverse', $matrix);
 }
 
-function flip_matrix($matrix)
+/**
+ * Specific to this one, we only need to swap matrix row 0 and 2
+ */
+function flip_matrix3($matrix)
 {
     $tmp = $matrix[0];
     $matrix[0] = $matrix[2];
